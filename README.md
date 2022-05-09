@@ -14,7 +14,7 @@ and the Flutter guide for
 TODO: Put a short description of the package here that helps potential users
 know whether this package might be useful for them.
 
-Innspired by [**Docusaurus's admonitions**](https://docusaurus.io/docs/markdown-features/admonitions)
+Inspired by [**Docusaurus's admonitions**](https://docusaurus.io/docs/markdown-features/admonitions)
 
 ## Features
 
