@@ -22,6 +22,10 @@ TODO: List what your package can do. Maybe include images, gifs, or videos.
 
 ![admonition screenshot](https://imgur.com/6AIaCUr.png)
 
+## Demo
+
+https://flutter-admonitions.web.app/#/
+
 ## Getting started
 
 TODO: List prerequisites and provide or point to information on how to
