@@ -100,8 +100,41 @@ class MyHomePage extends StatelessWidget {
             ),
             const Divider(),
             Text(
-              'Classic Admonition',
-              style: Theme.of(context).textTheme.headline5,
+              '...with actions',
+              style: Theme.of(context).textTheme.headline6,
+            ),
+            PastelAdmonition.caution(
+              text: '(Caution) I hope you read this. With action button below.',
+              actions: [
+                TextButton(
+                    style: TextButton.styleFrom(
+                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      primary: Theme.of(context).textTheme.bodyLarge!.color,
+                      textStyle: const TextStyle(fontWeight: FontWeight.w600),
+                    ),
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).removeCurrentSnackBar();
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                        content: Text('Button 1 pressed'),
+                        behavior: SnackBarBehavior.floating,
+                      ));
+                    },
+                    child: const Text('Action 1')),
+                TextButton(
+                    style: TextButton.styleFrom(
+                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      primary: Theme.of(context).textTheme.bodyLarge!.color,
+                      textStyle: const TextStyle(fontWeight: FontWeight.w600),
+                    ),
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).removeCurrentSnackBar();
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                        content: Text('Button 2 pressed'),
+                        behavior: SnackBarBehavior.floating,
+                      ));
+                    },
+                    child: const Text('Action 2'))
+              ],
             ),
           ],
         ),

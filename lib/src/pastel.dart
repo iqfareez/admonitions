@@ -10,6 +10,7 @@ class PastelAdmonition extends StatelessWidget {
       this.color = Colors.blue,
       this.icon,
       this.opacity = .3,
+      this.actions,
       this.primaryColor})
       : assert(child == null || text == null,
             'Either child or text is allowed to exist'),
@@ -22,6 +23,7 @@ class PastelAdmonition extends StatelessWidget {
     this.color = const Color(0xffebedf0),
     this.icon = const FaIcon(FontAwesomeIcons.circleInfo),
     this.opacity = .3,
+    this.actions,
     this.primaryColor,
   }) : super(key: key);
 
@@ -32,6 +34,7 @@ class PastelAdmonition extends StatelessWidget {
     this.color = const Color(0xff00a400),
     this.icon = const FaIcon(FontAwesomeIcons.lightbulb),
     this.opacity = .3,
+    this.actions,
     this.primaryColor,
   }) : super(key: key);
 
@@ -42,6 +45,7 @@ class PastelAdmonition extends StatelessWidget {
     this.color = const Color(0xff54c7ec),
     this.icon = const FaIcon(FontAwesomeIcons.circleExclamation),
     this.opacity = .3,
+    this.actions,
     this.primaryColor,
   }) : super(key: key);
   const PastelAdmonition.caution({
@@ -51,6 +55,7 @@ class PastelAdmonition extends StatelessWidget {
     this.color = const Color(0xffffba00),
     this.icon = const FaIcon(FontAwesomeIcons.triangleExclamation),
     this.opacity = .3,
+    this.actions,
     this.primaryColor,
   }) : super(key: key);
   const PastelAdmonition.danger({
@@ -60,6 +65,7 @@ class PastelAdmonition extends StatelessWidget {
     this.color = const Color(0xfffa383e),
     this.icon = const FaIcon(FontAwesomeIcons.fire),
     this.opacity = .3,
+    this.actions,
     this.primaryColor,
   }) : super(key: key);
 
@@ -75,6 +81,8 @@ class PastelAdmonition extends StatelessWidget {
 
   final Color? primaryColor;
 
+  final List<Widget>? actions;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -83,24 +91,34 @@ class PastelAdmonition extends StatelessWidget {
       decoration: BoxDecoration(
           color: (color ?? Theme.of(context).primaryColor).withOpacity(opacity),
           borderRadius: BorderRadius.circular(16)),
-      child: Row(
+      child: Column(
         children: [
-          if (icon != null) ...[
-            IconTheme(
-                data: IconThemeData(
-                    color: primaryColor ?? Theme.of(context).iconTheme.color,
-                    size: 18),
-                child: icon!),
-            const SizedBox(width: 10)
-          ],
-          if (text != null)
-            DefaultTextStyle(
-                style: TextStyle(
-                    color: primaryColor ??
-                        Theme.of(context).textTheme.bodyText1!.color),
-                child: Flexible(child: Text(text!)))
-          else
-            child!
+          Row(
+            children: [
+              if (icon != null) ...[
+                IconTheme(
+                    data: IconThemeData(
+                        color:
+                            primaryColor ?? Theme.of(context).iconTheme.color,
+                        size: 18),
+                    child: icon!),
+                const SizedBox(width: 10)
+              ],
+              if (text != null)
+                DefaultTextStyle(
+                    style: TextStyle(
+                        color: primaryColor ??
+                            Theme.of(context).textTheme.bodyText1!.color),
+                    child: Flexible(child: Text(text!)))
+              else
+                child!
+            ],
+          ),
+          if (actions != null)
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: actions!,
+            )
         ],
       ),
     );
