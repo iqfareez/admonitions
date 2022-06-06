@@ -136,6 +136,29 @@ class MyHomePage extends StatelessWidget {
                     child: const Text('Action 2'))
               ],
             ),
+            Text(
+              'Classic Admonitions',
+              style: Theme.of(context).textTheme.headline6,
+            ),
+            const ClassicAdmonition.note(
+              text: '(Note) You might read this, you might not.',
+            ),
+            const ClassicAdmonition.tip(
+              text: '(Tip) You want to read this.',
+            ),
+            const ClassicAdmonition.info(
+              text: '(Info/Important) You should read this.',
+            ),
+            const ClassicAdmonition.caution(
+              text: '(Caution) I hope you read this.',
+            ),
+            const ClassicAdmonition.danger(
+              text: '(Danger) You need to read this.',
+            ),
+            const ClassicAdmonition(
+              text:
+                  '(Raw) Background colour is defaulted to your app primary colour.',
+            ),
           ],
         ),
       ),
