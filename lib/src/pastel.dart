@@ -69,18 +69,37 @@ class PastelAdmonition extends StatelessWidget {
     this.primaryColor,
   }) : super(key: key);
 
+  /// Text inside the admonition
   final String? text;
 
+  /// Widget to replace Text widget inside admonitions
+  /// To use [child], [text] must be null.
   final Widget? child;
 
+  /// Base colour of the admonition
+  /// [opacity] value will be applied to this [color]
   final Color? color;
 
+  /// Leading icon for admonition
   final Widget? icon;
 
+  /// opacity of the admonition.
+  /// Value between 0 and 1.
   final double opacity;
 
+  /// Primary colour of the admonitions
   final Color? primaryColor;
 
+  /// List of widgets to be displayed at the end of the adminitions.
+  /// If [actions] is null, the admonition will be displayed without actions.
+  /// Usually will be TextButton(s)
+  ///
+  /// Button Style parameter you can follow:
+  /// ```dart
+  /// tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+  /// primary: Theme.of(context).textTheme.bodyLarge!.color,
+  /// textStyle: const TextStyle(fontWeight: FontWeight.w600),
+  /// ```
   final List<Widget>? actions;
 
   @override

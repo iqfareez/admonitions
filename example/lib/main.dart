@@ -23,6 +23,7 @@ class _MyAppState extends State<MyApp> {
             title: const Text('Admonition Demo'),
             actions: [
               IconButton(
+                  tooltip: "Toggle light/dark theme",
                   onPressed: () {
                     setState(() {
                       _theme = _theme == ThemeMode.light
@@ -136,6 +137,7 @@ class MyHomePage extends StatelessWidget {
                     child: const Text('Action 2'))
               ],
             ),
+            const Divider(),
             Text(
               'Classic Admonitions',
               style: Theme.of(context).textTheme.headline6,

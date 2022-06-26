@@ -69,18 +69,37 @@ class ClassicAdmonition extends StatelessWidget {
     this.primaryColor,
   }) : super(key: key);
 
+  /// Text that will be displayed in the admonition.
   final String? text;
 
+  /// The child widget that will be displayed in the admonition.
+  /// To use [child], [text] must be null.
   final Widget? child;
 
+  /// Colour of the admonition.
   final Color? color;
 
+  /// The leading icon of the admonition.
+  /// Overrides the default icon
   final Widget? icon;
 
+  /// Colour background opacity
+  /// value between 0 and 1
   final double opacity;
 
+  /// Colour of the [text] and [icon]
   final Color? primaryColor;
 
+  /// List of widgets to be displayed at the end of the adminitions.
+  /// If [actions] is null, the admonition will be displayed without actions.
+  /// Usually will be TextButton(s).
+  ///
+  /// Button Style parameter you can follow:
+  /// ```dart
+  /// tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+  /// primary: Theme.of(context).textTheme.bodyLarge!.color,
+  /// textStyle: const TextStyle(fontWeight: FontWeight.w600),
+  /// ```
   final List<Widget>? actions;
 
   @override
@@ -91,7 +110,7 @@ class ClassicAdmonition extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         child: Stack(children: [
           Positioned.fromRect(
-            rect: Rect.fromLTRB(0, 0, 8, 400),
+            rect: const Rect.fromLTRB(0, 0, 8, 400),
             child: Container(
               color: color,
               // constraints: BoxConstraints.expand(),

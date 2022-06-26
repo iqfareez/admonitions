@@ -1,7 +1,7 @@
 name: admonitions
-description: A new Flutter package project.
-version: 0.0.1
-homepage:
+description: A nice looking banner for hints, warnings, messages etc.
+version: 1.0.0
+homepage: https://github.com/iqfareez/admonitions
 
 environment:
   sdk: ">=2.16.2 <3.0.0"

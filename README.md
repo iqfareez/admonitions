@@ -11,37 +11,22 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A nice-looking banner-like widget to display messages, warnings, info etc.
 
 Inspired by [**Docusaurus's admonitions**](https://docusaurus.io/docs/markdown-features/admonitions)
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+Comes with **three (3)** available styles:
 
-![admonition screenshot](https://imgur.com/6AIaCUr.png)
+- Solid
+- Pastel
+- Classic
 
 ## Demo
 
-https://flutter-admonitions.web.app/#/
+Try the live demo here: :sparkles: **https://flutter-admonitions.web.app** :sparkles:
 
-## Getting started
+## Example
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
-```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+View **example** section, or visit GitHub and navigate to `/example` folder.

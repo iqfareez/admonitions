@@ -1,3 +1,3 @@
-## 0.0.1
+## 1.0.0
 
-* TODO: Describe initial release.
+- :tada: Initial release. Comes with classic, pastel and solid admonitions.
