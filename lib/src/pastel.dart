@@ -127,7 +127,7 @@ class PastelAdmonition extends StatelessWidget {
                 DefaultTextStyle(
                     style: TextStyle(
                         color: primaryColor ??
-                            Theme.of(context).textTheme.bodyText1!.color),
+                            Theme.of(context).textTheme.bodyLarge!.color),
                     child: Flexible(child: Text(text!)))
               else
                 child!

@@ -16,8 +16,13 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Admonition Demo',
+      theme: ThemeData.light(
+        useMaterial3: true,
+      ),
       themeMode: _theme,
-      darkTheme: ThemeData.dark(),
+      darkTheme: ThemeData.dark(
+        useMaterial3: true,
+      ),
       home: Scaffold(
           appBar: AppBar(
             title: const Text('Admonition Demo'),
@@ -54,7 +59,7 @@ class MyHomePage extends StatelessWidget {
           children: [
             Text(
               'Solid Admonition',
-              style: Theme.of(context).textTheme.headline5,
+              style: Theme.of(context).textTheme.headlineSmall,
             ),
             const SolidAdmonition.note(
               text: '(Note) You might read this, you might not.',
@@ -78,7 +83,7 @@ class MyHomePage extends StatelessWidget {
             const Divider(),
             Text(
               'Pastel Admonition',
-              style: Theme.of(context).textTheme.headline5,
+              style: Theme.of(context).textTheme.headlineSmall,
             ),
             const PastelAdmonition.note(
               text: '(Note) You might read this, you might not.',
@@ -102,15 +107,16 @@ class MyHomePage extends StatelessWidget {
             const Divider(),
             Text(
               '...with actions',
-              style: Theme.of(context).textTheme.headline6,
+              style: Theme.of(context).textTheme.titleLarge,
             ),
             PastelAdmonition.caution(
               text: '(Caution) I hope you read this. With action button below.',
               actions: [
                 TextButton(
                     style: TextButton.styleFrom(
+                      foregroundColor:
+                          Theme.of(context).textTheme.bodyLarge!.color,
                       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                      primary: Theme.of(context).textTheme.bodyLarge!.color,
                       textStyle: const TextStyle(fontWeight: FontWeight.w600),
                     ),
                     onPressed: () {
@@ -123,8 +129,9 @@ class MyHomePage extends StatelessWidget {
                     child: const Text('Action 1')),
                 TextButton(
                     style: TextButton.styleFrom(
+                      foregroundColor:
+                          Theme.of(context).textTheme.bodyLarge!.color,
                       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                      primary: Theme.of(context).textTheme.bodyLarge!.color,
                       textStyle: const TextStyle(fontWeight: FontWeight.w600),
                     ),
                     onPressed: () {
@@ -140,7 +147,7 @@ class MyHomePage extends StatelessWidget {
             const Divider(),
             Text(
               'Classic Admonitions',
-              style: Theme.of(context).textTheme.headline6,
+              style: Theme.of(context).textTheme.titleLarge,
             ),
             const ClassicAdmonition.note(
               text: '(Note) You might read this, you might not.',

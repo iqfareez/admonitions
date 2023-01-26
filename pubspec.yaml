@@ -1,7 +1,8 @@
 name: admonitions
-description: A nice looking banner for hints, warnings, messages etc.
-version: 1.0.0
-homepage: https://github.com/iqfareez/admonitions
+description: Easily add visually striking & informative banners (hints, warnings, messages) to your app
+version: 1.0.1
+repository: https://github.com/iqfareez/admonitions
+issue_tracker: https://github.com/iqfareez/admonitions/issues
 
 environment:
   sdk: ">=2.16.2 <3.0.0"
