@@ -1,8 +1,22 @@
 name: admonitions
 description: Easily add visually striking & informative banners (hints, warnings, messages) to your app
-version: 1.0.1
+version: 1.1.0
 repository: https://github.com/iqfareez/admonitions
 issue_tracker: https://github.com/iqfareez/admonitions/issues
+funding:
+  - https://github.com/sponsors/iqfareez
+topics:
+  - alert
+  - banner
+screenshots:
+  - description: 'Example UI of Solid Admonition'
+    path: 'screenshots/solid_admonitions.png'
+  - description: 'Example UI of Pastel Admonition'
+    path: 'screenshots/pastel_admonitions.png'
+  - description: 'Example UI of Pastel Admonition with Actions (Actions are customizable)'
+    path: 'screenshots/pastel_admonitions_with_actions.png'
+  - description: 'Example UI of Solid Admonition'
+    path: 'screenshots/classic_admonitions.png'
 
 environment:
   sdk: ">=3.0.0 <4.0.0"

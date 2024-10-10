@@ -1,3 +1,10 @@
+## 1.1.0 (10 October 2024)
+
+- :zap: Update dependencies 
+- :arrow_up: Bump supported Dart version
+- :rotating_light: Updates lints
+- :pencil2: Update example project
+
 ## 1.0.1 (27 January 2023)
 
 - :pencil2: Flutter 3.7 ready. Fixed few deprecated members.
