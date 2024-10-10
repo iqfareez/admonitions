@@ -11,11 +11,22 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  ThemeMode _theme = ThemeMode.light;
+  ThemeMode _theme = ThemeMode.system;
 
+  // Cycle the theme
   void _toggleTheme() {
     setState(() {
-      _theme = _theme == ThemeMode.light ? ThemeMode.dark : ThemeMode.light;
+      switch (_theme) {
+        case ThemeMode.light:
+          _theme = ThemeMode.dark;
+          break;
+        case ThemeMode.dark:
+          _theme = ThemeMode.system;
+          break;
+        case ThemeMode.system:
+          _theme = ThemeMode.light;
+          break;
+      }
     });
   }
 
@@ -31,13 +42,13 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Admonition Demo'),
           actions: [
             IconButton(
-              tooltip: "Toggle light/dark theme",
+              tooltip: "Toggle light/dark/system theme",
               onPressed: _toggleTheme,
               icon: Icon(
                 switch (_theme) {
-                  ThemeMode.light => Icons.light_mode_outlined,
-                  ThemeMode.dark => Icons.dark_mode_outlined,
-                  ThemeMode.system => Icons.brightness_auto_outlined,
+                  ThemeMode.light => Icons.light_mode_rounded,
+                  ThemeMode.dark => Icons.dark_mode_rounded,
+                  ThemeMode.system => Icons.brightness_auto_rounded,
                 },
               ),
             )
