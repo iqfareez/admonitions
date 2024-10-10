@@ -4,50 +4,53 @@ import 'package:flutter/material.dart';
 void main() => runApp(const MyApp());
 
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   State<MyApp> createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
-  var _theme = ThemeMode.light;
+  ThemeMode _theme = ThemeMode.light;
+
+  void _toggleTheme() {
+    setState(() {
+      _theme = _theme == ThemeMode.light ? ThemeMode.dark : ThemeMode.light;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Admonition Demo',
-      theme: ThemeData.light(
-        useMaterial3: true,
-      ),
+      theme: ThemeData.light(useMaterial3: true),
+      darkTheme: ThemeData.dark(useMaterial3: true),
       themeMode: _theme,
-      darkTheme: ThemeData.dark(
-        useMaterial3: true,
-      ),
       home: Scaffold(
-          appBar: AppBar(
-            title: const Text('Admonition Demo'),
-            actions: [
-              IconButton(
-                  tooltip: "Toggle light/dark theme",
-                  onPressed: () {
-                    setState(() {
-                      _theme = _theme == ThemeMode.light
-                          ? ThemeMode.dark
-                          : ThemeMode.light;
-                    });
-                  },
-                  icon: Icon(_theme == ThemeMode.light
-                      ? Icons.light_mode_outlined
-                      : Icons.dark_mode_outlined))
-            ],
-          ),
-          body: const MyHomePage()),
+        appBar: AppBar(
+          title: const Text('Admonition Demo'),
+          actions: [
+            IconButton(
+              tooltip: "Toggle light/dark theme",
+              onPressed: _toggleTheme,
+              icon: Icon(
+                switch (_theme) {
+                  ThemeMode.light => Icons.light_mode_outlined,
+                  ThemeMode.dark => Icons.dark_mode_outlined,
+                  ThemeMode.system => Icons.brightness_auto_outlined,
+                },
+              ),
+            )
+          ],
+        ),
+        body: const MyHomePage(),
+      ),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+  const MyHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {

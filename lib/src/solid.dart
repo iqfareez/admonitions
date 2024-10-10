@@ -4,54 +4,48 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class SolidAdmonition extends StatelessWidget {
   /// Raw basic Solid Admonition
   const SolidAdmonition(
-      {Key? key, this.child, this.text, this.color = Colors.blue, this.icon})
+      {super.key, this.child, this.text, this.color = Colors.blue, this.icon})
       : assert(child == null || text == null,
             'Either child or text is allowed to exist'),
-        _primaryColor = Colors.white,
-        super(key: key);
+        _primaryColor = Colors.white;
 
   const SolidAdmonition.note(
-      {Key? key,
+      {super.key,
       this.child,
       this.text,
       this.color = const Color(0xffebedf0),
       this.icon = const FaIcon(FontAwesomeIcons.circleInfo)})
-      : _primaryColor = Colors.black,
-        super(key: key);
+      : _primaryColor = Colors.black;
 
   const SolidAdmonition.tip(
-      {Key? key,
+      {super.key,
       this.child,
       this.text,
       this.color = const Color(0xff00a400),
       this.icon = const FaIcon(FontAwesomeIcons.lightbulb)})
-      : _primaryColor = Colors.white,
-        super(key: key);
+      : _primaryColor = Colors.white;
 
   const SolidAdmonition.info(
-      {Key? key,
+      {super.key,
       this.child,
       this.text,
       this.color = const Color(0xff54c7ec),
       this.icon = const FaIcon(FontAwesomeIcons.circleExclamation)})
-      : _primaryColor = Colors.white,
-        super(key: key);
+      : _primaryColor = Colors.white;
   const SolidAdmonition.caution(
-      {Key? key,
+      {super.key,
       this.child,
       this.text,
       this.color = const Color(0xffffba00),
       this.icon = const FaIcon(FontAwesomeIcons.triangleExclamation)})
-      : _primaryColor = Colors.white,
-        super(key: key);
+      : _primaryColor = Colors.white;
   const SolidAdmonition.danger(
-      {Key? key,
+      {super.key,
       this.child,
       this.text,
       this.color = const Color(0xfffa383e),
       this.icon = const FaIcon(FontAwesomeIcons.fire)})
-      : _primaryColor = Colors.white,
-        super(key: key);
+      : _primaryColor = Colors.white;
 
   final String? text;
 

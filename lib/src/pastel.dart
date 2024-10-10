@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class PastelAdmonition extends StatelessWidget {
   /// Admonition with soft colours
   const PastelAdmonition(
-      {Key? key,
+      {super.key,
       this.child,
       this.text,
       this.color = Colors.blue,
@@ -13,11 +13,10 @@ class PastelAdmonition extends StatelessWidget {
       this.actions,
       this.primaryColor})
       : assert(child == null || text == null,
-            'Either child or text is allowed to exist'),
-        super(key: key);
+            'Either child or text is allowed to exist');
 
   const PastelAdmonition.note({
-    Key? key,
+    super.key,
     this.child,
     this.text,
     this.color = const Color(0xffebedf0),
@@ -25,10 +24,10 @@ class PastelAdmonition extends StatelessWidget {
     this.opacity = .3,
     this.actions,
     this.primaryColor,
-  }) : super(key: key);
+  });
 
   const PastelAdmonition.tip({
-    Key? key,
+    super.key,
     this.child,
     this.text,
     this.color = const Color(0xff00a400),
@@ -36,10 +35,10 @@ class PastelAdmonition extends StatelessWidget {
     this.opacity = .3,
     this.actions,
     this.primaryColor,
-  }) : super(key: key);
+  });
 
   const PastelAdmonition.info({
-    Key? key,
+    super.key,
     this.child,
     this.text,
     this.color = const Color(0xff54c7ec),
@@ -47,9 +46,9 @@ class PastelAdmonition extends StatelessWidget {
     this.opacity = .3,
     this.actions,
     this.primaryColor,
-  }) : super(key: key);
+  });
   const PastelAdmonition.caution({
-    Key? key,
+    super.key,
     this.child,
     this.text,
     this.color = const Color(0xffffba00),
@@ -57,9 +56,9 @@ class PastelAdmonition extends StatelessWidget {
     this.opacity = .3,
     this.actions,
     this.primaryColor,
-  }) : super(key: key);
+  });
   const PastelAdmonition.danger({
-    Key? key,
+    super.key,
     this.child,
     this.text,
     this.color = const Color(0xfffa383e),
@@ -67,7 +66,7 @@ class PastelAdmonition extends StatelessWidget {
     this.opacity = .3,
     this.actions,
     this.primaryColor,
-  }) : super(key: key);
+  });
 
   /// Text inside the admonition
   final String? text;

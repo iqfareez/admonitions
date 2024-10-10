@@ -1,4 +1,4 @@
-library admonitions;
+library;
 
 export 'src/solid.dart';
 export 'src/pastel.dart';

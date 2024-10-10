@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class ClassicAdmonition extends StatelessWidget {
   /// Classic admonitions (solid line on the left, pastel colour on the right)
   const ClassicAdmonition(
-      {Key? key,
+      {super.key,
       this.child,
       this.text,
       this.color = Colors.blue,
@@ -13,11 +13,10 @@ class ClassicAdmonition extends StatelessWidget {
       this.actions,
       this.primaryColor})
       : assert(child == null || text == null,
-            'Either child or text is allowed to exist'),
-        super(key: key);
+            'Either child or text is allowed to exist');
 
   const ClassicAdmonition.note({
-    Key? key,
+    super.key,
     this.child,
     this.text,
     this.color = const Color(0xffebedf0),
@@ -25,10 +24,10 @@ class ClassicAdmonition extends StatelessWidget {
     this.opacity = .3,
     this.actions,
     this.primaryColor,
-  }) : super(key: key);
+  });
 
   const ClassicAdmonition.tip({
-    Key? key,
+    super.key,
     this.child,
     this.text,
     this.color = const Color(0xff00a400),
@@ -36,10 +35,10 @@ class ClassicAdmonition extends StatelessWidget {
     this.opacity = .3,
     this.actions,
     this.primaryColor,
-  }) : super(key: key);
+  });
 
   const ClassicAdmonition.info({
-    Key? key,
+    super.key,
     this.child,
     this.text,
     this.color = const Color(0xff54c7ec),
@@ -47,9 +46,9 @@ class ClassicAdmonition extends StatelessWidget {
     this.opacity = .3,
     this.actions,
     this.primaryColor,
-  }) : super(key: key);
+  });
   const ClassicAdmonition.caution({
-    Key? key,
+    super.key,
     this.child,
     this.text,
     this.color = const Color(0xffffba00),
@@ -57,9 +56,9 @@ class ClassicAdmonition extends StatelessWidget {
     this.opacity = .3,
     this.actions,
     this.primaryColor,
-  }) : super(key: key);
+  });
   const ClassicAdmonition.danger({
-    Key? key,
+    super.key,
     this.child,
     this.text,
     this.color = const Color(0xfffa383e),
@@ -67,7 +66,7 @@ class ClassicAdmonition extends StatelessWidget {
     this.opacity = .3,
     this.actions,
     this.primaryColor,
-  }) : super(key: key);
+  });
 
   /// Text that will be displayed in the admonition.
   final String? text;
