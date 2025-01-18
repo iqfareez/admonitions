@@ -158,6 +158,42 @@ class MyHomePage extends StatelessWidget {
                     child: const Text('Action 2'))
               ],
             ),
+            SolidAdmonition.info(
+              text:
+                  '(Info/Important) You should read this. With action button below.',
+              actions: [
+                TextButton(
+                    style: TextButton.styleFrom(
+                      foregroundColor:
+                          Theme.of(context).textTheme.bodyLarge!.color,
+                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      textStyle: const TextStyle(fontWeight: FontWeight.w600),
+                    ),
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).removeCurrentSnackBar();
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                        content: Text('Button 1 pressed'),
+                        behavior: SnackBarBehavior.floating,
+                      ));
+                    },
+                    child: const Text('Action 1')),
+                TextButton(
+                    style: TextButton.styleFrom(
+                      foregroundColor:
+                          Theme.of(context).textTheme.bodyLarge!.color,
+                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      textStyle: const TextStyle(fontWeight: FontWeight.w600),
+                    ),
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).removeCurrentSnackBar();
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                        content: Text('Button 2 pressed'),
+                        behavior: SnackBarBehavior.floating,
+                      ));
+                    },
+                    child: const Text('Action 2'))
+              ],
+            ),
             const Divider(),
             Text(
               'Classic Admonitions',

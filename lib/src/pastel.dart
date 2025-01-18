@@ -9,6 +9,8 @@ class PastelAdmonition extends StatelessWidget {
       this.text,
       this.color = Colors.blue,
       this.icon,
+      this.constraintHeight = true,
+      this.constraintWidth = false,
       this.opacity = .3,
       this.actions,
       this.primaryColor})
@@ -21,6 +23,8 @@ class PastelAdmonition extends StatelessWidget {
     this.text,
     this.color = const Color(0xffebedf0),
     this.icon = const FaIcon(FontAwesomeIcons.circleInfo),
+    this.constraintHeight = true,
+    this.constraintWidth = false,
     this.opacity = .3,
     this.actions,
     this.primaryColor,
@@ -32,6 +36,8 @@ class PastelAdmonition extends StatelessWidget {
     this.text,
     this.color = const Color(0xff00a400),
     this.icon = const FaIcon(FontAwesomeIcons.lightbulb),
+    this.constraintHeight = true,
+    this.constraintWidth = false,
     this.opacity = .3,
     this.actions,
     this.primaryColor,
@@ -43,6 +49,8 @@ class PastelAdmonition extends StatelessWidget {
     this.text,
     this.color = const Color(0xff54c7ec),
     this.icon = const FaIcon(FontAwesomeIcons.circleExclamation),
+    this.constraintHeight = true,
+    this.constraintWidth = false,
     this.opacity = .3,
     this.actions,
     this.primaryColor,
@@ -53,6 +61,8 @@ class PastelAdmonition extends StatelessWidget {
     this.text,
     this.color = const Color(0xffffba00),
     this.icon = const FaIcon(FontAwesomeIcons.triangleExclamation),
+    this.constraintHeight = true,
+    this.constraintWidth = false,
     this.opacity = .3,
     this.actions,
     this.primaryColor,
@@ -63,6 +73,8 @@ class PastelAdmonition extends StatelessWidget {
     this.text,
     this.color = const Color(0xfffa383e),
     this.icon = const FaIcon(FontAwesomeIcons.fire),
+    this.constraintHeight = true,
+    this.constraintWidth = false,
     this.opacity = .3,
     this.actions,
     this.primaryColor,
@@ -74,6 +86,14 @@ class PastelAdmonition extends StatelessWidget {
   /// Widget to replace Text widget inside admonitions
   /// To use [child], [text] must be null.
   final Widget? child;
+
+  /// Limit the height of the admonition based on child's content. Default to
+  /// [true] to prevent this element expands when put inside unconstrained parents
+  final bool constraintHeight;
+
+  /// Limit the width of the admonition based on child's content. Default to
+  /// [false] to fill the parent's width
+  final bool constraintWidth;
 
   /// Base colour of the admonition
   /// [opacity] value will be applied to this [color]
@@ -104,14 +124,19 @@ class PastelAdmonition extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      // height: height,
+      // width: width,
       padding: const EdgeInsets.all(14),
       margin: const EdgeInsets.all(4),
       decoration: BoxDecoration(
-          color: (color ?? Theme.of(context).primaryColor).withOpacity(opacity),
+          color: (color ?? Theme.of(context).primaryColor)
+              .withValues(alpha: opacity),
           borderRadius: BorderRadius.circular(16)),
       child: Column(
+        mainAxisSize: constraintHeight ? MainAxisSize.min : MainAxisSize.max,
         children: [
           Row(
+            mainAxisSize: constraintWidth ? MainAxisSize.min : MainAxisSize.max,
             children: [
               if (icon != null) ...[
                 IconTheme(

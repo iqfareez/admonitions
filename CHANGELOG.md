@@ -1,3 +1,8 @@
+## 1.1.1 (19 January 2025)
+
+- :sparkles: Added properties `constraintHeight` & `constraintWidth` to admonitions. This is useful for layouting & sizing.
+- :sparkles: Added properties `actions` to SolidAdmonition element.
+
 ## 1.1.0 (10 October 2024)
 
 - :zap: Update dependencies 
